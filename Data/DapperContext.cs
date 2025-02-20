@@ -1,14 +1,14 @@
+using Npgsql;
 using System.Data;
-using Microsoft.Data.SqlClient;
 
 public class DapperContext
 {
     private readonly string _connectionString;
 
-    public DapperContext(string connectionString)
+    public DapperContext(IConfiguration configuration)
     {
-        _connectionString = connectionString;
+        _connectionString = configuration.GetConnectionString("DefaultConnection");
     }
 
-    public IDbConnection CreateConnection() => new SqlConnection(_connectionString);
+    public IDbConnection CreateConnection() => new NpgsqlConnection(_connectionString);
 }

@@ -1,9 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-var connectionString = Environment.GetEnvironmentVariable("DATABASE_URL") 
-                       ?? builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<OasisDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));  // If using EF Core
 
-builder.Services.AddSingleton<DapperContext>(_ => new DapperContext(connectionString));
+
+builder.Services.AddSingleton<DapperContext>();
 builder.Services.AddControllers();
 builder.Services.AddCors(options =>
 {
