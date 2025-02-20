@@ -2,20 +2,26 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Load connection string
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+// Configure PostgreSQL Database for EF Core
 builder.Services.AddDbContext<OasisDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));  // If using EF Core
+    options.UseNpgsql(connectionString));
 
+// Configure PostgreSQL for Dapper (Singleton)
+builder.Services.AddSingleton<DapperContext>(provider => new DapperContext(connectionString));
 
-builder.Services.AddSingleton<DapperContext>();
 builder.Services.AddControllers();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",
-        builder => builder.WithOrigins("http://localhost:5173, https://a4v0.netlify.app")
-                          .AllowAnyHeader()
-                          .AllowAnyMethod()
-                          .AllowCredentials());
+        policy => policy.WithOrigins("http://localhost:5173", "https://a4v0.netlify.app")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowCredentials());
 });
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
