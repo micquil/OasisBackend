@@ -90,3 +90,10 @@ C:\Users\mjenc\Documents\OasisBackend\obj\Debug\net8.0\refint\Oasis.dll
 C:\Users\mjenc\Documents\OasisBackend\obj\Debug\net8.0\Oasis.pdb
 C:\Users\mjenc\Documents\OasisBackend\obj\Debug\net8.0\Oasis.genruntimeconfig.cache
 C:\Users\mjenc\Documents\OasisBackend\obj\Debug\net8.0\ref\Oasis.dll
+C:\Users\mjenc\Documents\OasisBackend\bin\Debug\net8.0\nuget.config
+C:\Users\mjenc\Documents\OasisBackend\bin\Debug\net8.0\out\nuget.config
+C:\Users\mjenc\Documents\OasisBackend\bin\Debug\net8.0\out\web.config
+C:\Users\mjenc\Documents\OasisBackend\bin\Debug\net8.0\out\appsettings.Development.json
+C:\Users\mjenc\Documents\OasisBackend\bin\Debug\net8.0\out\appsettings.json
+C:\Users\mjenc\Documents\OasisBackend\bin\Debug\net8.0\out\Oasis.deps.json
+C:\Users\mjenc\Documents\OasisBackend\bin\Debug\net8.0\out\Oasis.runtimeconfig.json
