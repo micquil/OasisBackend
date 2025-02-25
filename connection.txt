@@ -1,0 +1,4 @@
+"ConnectionStrings": {
+    "DefaultConnection": "Host=shinkansen.proxy.rlwy.net;Port=11287;Database=railway;Username=postgres;Password=jayDoywZWfVDcKiqrPowyKUyUNuxoUKb"
+    "DefaultConnection": "Server=MICSTILLS\\SQLEXPRESS;Database=oasisdb;Integrated Security=True;TrustServerCertificate=True;"
+  }
